@@ -72,7 +72,6 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
     }
 
     .logo {
@@ -119,12 +118,6 @@
       color: #ffffff;
     }
 
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
     .nav-cta {
       display: inline-flex;
       align-items: center;
@@ -143,12 +136,6 @@
 
     .nav-cta:hover {
       transform: translateY(-1px);
-    }
-
-    .logo-main-img {
-      height: 44px;
-      width: auto;
-      display: block;
     }
 
     /* HERO CONTENT */
@@ -398,20 +385,14 @@
       box-shadow: var(--shadow-card);
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 14px;
       color: #f5f3ff;
     }
 
-    .service-logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 4px;
-    }
-
-    .service-logo img {
-      max-width: 120px;
-      height: auto;
+    .service-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #fdfbff;
     }
 
     .service-text {
@@ -446,6 +427,7 @@
 
     /* RESPONSIVE */
 
+    
     @media (max-width: 960px) {
       nav {
         display: none;
@@ -486,7 +468,7 @@
       }
     }
 
-    @media (max-width: 520px) {
+@media (max-width: 520px) {
       .hero h1 {
         font-size: 34px;
       }
@@ -495,7 +477,7 @@
         font-size: 24px;
       }
     }
-
+  
     /* CONTACT SECTION */
 
     .contact-section {
@@ -608,13 +590,9 @@
           <a href="come-funziona-cliente.html">Come funziona per il cliente</a>
           <a href="cosa-offriamo-e-prezzi.html">Cosa offriamo e prezzi</a>
         </nav>
-        <div class="header-right">
-          <!-- LOGO ZAPPY VIOLA IN ALTO A DESTRA -->
-          <img src="logo-zappy-main.webp" alt="Zappy" class="logo-main-img" />
-          <a href="https://wa.me/393791243514" target="_blank" rel="noopener noreferrer" class="nav-cta">
-            Contattaci
-          </a>
-        </div>
+        <a href="https://wa.me/393791243514" target="_blank" rel="noopener noreferrer" class="nav-cta">
+          Contattaci
+        </a>
       </header>
 
       <section class="hero">
@@ -670,55 +648,46 @@
         </p>
       </div>
 
+      
       <div class="services-grid">
-        <!-- Card 1 - Zappy Match -->
+        <!-- Card 1 -->
         <div class="service-card">
-          <div class="service-logo">
-            <img src="logo-zappy-match.webp" alt="Zappy Match" />
-          </div>
+          <h3 class="service-title">Zappy Match</h3>
           <p class="service-text">
             Con Zappy Match i clienti possono chattare tra tavoli, scoprire nuove persone
             e socializzare direttamente dal proprio posto. Ideale per eventi e serate dinamiche.
           </p>
         </div>
 
-        <!-- Card 2 - Zappy Land -->
+        <!-- Card 2 -->
         <div class="service-card">
-          <div class="service-logo">
-            <img src="logo-zappy-land.webp" alt="Zappy Land" />
-          </div>
+          <h3 class="service-title">Zappy Land</h3>
           <p class="service-text">
             Zappy Land intrattiene bambini e ragazzi con giochi, disegni
             e animazioni divertenti per tutte le età.
           </p>
         </div>
 
-        <!-- Card 3 - Zappy Photo -->
+        <!-- Card 3 -->
         <div class="service-card">
-          <div class="service-logo">
-            <img src="logo-zappy-photo.webp" alt="Zappy Photo" />
-          </div>
+          <h3 class="service-title">Zappy Photo</h3>
           <p class="service-text">
             Zappy Photo crea una gallery condivisa delle foto dei clienti:
             perfetta anche per promo social.
           </p>
         </div>
 
-        <!-- Card 4 - Zappy Room -->
+        <!-- Card 4 -->
         <div class="service-card">
-          <div class="service-logo">
-            <img src="logo-zappy-room.webp" alt="Zappy Room" />
-          </div>
+          <h3 class="service-title">Zappy Room</h3>
           <p class="service-text">
             Zappy Room è l’app per sfidarsi a quiz a tempo, in solo o in gruppo.
           </p>
         </div>
 
-        <!-- Card 5 - Zappy Lucky -->
+        <!-- Card 5 -->
         <div class="service-card">
-          <div class="service-logo">
-            <img src="logo-zappy-lucky.webp" alt="Zappy Lucky" />
-          </div>
+          <h3 class="service-title">Zappy Lucky</h3>
           <p class="service-text">
             Zappy Lucky attiva una ruota della fortuna ad ogni pagamento
             con coupon premio.
