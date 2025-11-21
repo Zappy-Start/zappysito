@@ -31,16 +31,11 @@
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       color: var(--text-main);
       background: var(--bg-body);
       line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
     }
 
     img {
@@ -61,17 +56,13 @@
       padding: 0 20px;
     }
 
-    .service-logo {
-      width:110%;
-      max-height:120px;
-      height:auto !important;
-      background:transparent !important;
-      display:block;
-      margin:0 auto 4px;
-      object-fit:contain;
-      transform:translateY(-6px);
-      transition: transform 0.25s ease-out, filter 0.25s ease-out;
-    }
+    
+.service-logo {
+  width:100%;
+  height:auto !important;
+  background:transparent !important;
+}
+
 
     /* HERO WRAP (sfondo viola) */
 
@@ -89,16 +80,6 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      opacity: 0;
-      transform: translateY(-10px);
-      animation: headerFade 0.6s ease-out 0.1s forwards;
-    }
-
-    @keyframes headerFade {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
 
     .logo {
@@ -139,29 +120,10 @@
     .nav-center a {
       color: rgba(255, 255, 255, 0.86);
       text-decoration: none;
-      position: relative;
-      padding-bottom: 2px;
-      transition: color 0.18s ease;
-    }
-
-    .nav-center a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -3px;
-      width: 0;
-      height: 2px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #ffce6b, #ff8aee);
-      transition: width 0.18s ease;
     }
 
     .nav-center a:hover {
       color: #ffffff;
-    }
-
-    .nav-center a:hover::after {
-      width: 100%;
     }
 
     .nav-cta {
@@ -178,13 +140,10 @@
       box-shadow: 0 12px 28px rgba(10, 5, 40, 0.35);
       cursor: pointer;
       white-space: nowrap;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
     }
 
     .nav-cta:hover {
       transform: translateY(-1px);
-      box-shadow: 0 16px 34px rgba(10, 5, 40, 0.5);
-      background: #f4f0ff;
     }
 
     /* HERO CONTENT */
@@ -195,16 +154,6 @@
       gap: 46px;
       align-items: center;
       padding: 52px 0 40px;
-      opacity: 0;
-      transform: translateY(24px);
-      animation: heroFade 0.7s ease-out 0.18s forwards;
-    }
-
-    @keyframes heroFade {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
 
     .pill {
@@ -249,39 +198,27 @@
       margin-bottom: 22px;
     }
 
-    .btn-primary,
-    .btn-secondary {
+    .btn-primary {
+      padding: 11px 24px;
       border-radius: 999px;
       border: none;
       font-weight: 600;
       font-size: 14px;
       cursor: pointer;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
-    }
-
-    .btn-primary {
-      padding: 11px 24px;
       background: linear-gradient(135deg, var(--accent), #ff8a6b);
       color: #ffffff;
       box-shadow: 0 18px 40px rgba(6, 0, 30, 0.65);
     }
 
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 22px 46px rgba(6, 0, 30, 0.8);
-    }
-
     .btn-secondary {
       padding: 10px 18px;
+      border-radius: 999px;
       border: 1px solid rgba(255, 255, 255, 0.5);
-      background: rgba(4, 0, 40, 0.2);
+      background: transparent;
       color: #ffffff;
       font-weight: 500;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.08);
-      transform: translateY(-1px);
+      font-size: 14px;
+      cursor: pointer;
     }
 
     .hero-note {
@@ -321,36 +258,31 @@
       justify-content: flex-end;
     }
 
-    .hero-image {
-      position: relative;
+    .hero-image-placeholder {
+      width: 320px;
       height: 420px;
-      overflow: visible;
-      animation: floatPhone 5.5s ease-in-out 0.4s infinite alternate;
+      border-radius: 40px;
+      background:
+        radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.24), transparent 55%),
+        linear-gradient(145deg, #1a102f, #291447);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    @keyframes floatPhone {
-      0% {
-        transform: translateY(0);
-      }
-      100% {
-        transform: translateY(-10px);
-      }
+    .hero-image-placeholder span {
+      font-size: 14px;
+      color: rgba(245, 242, 255, 0.96);
     }
 
-    .hero-image img {
-      height:120%;
-      width:auto;
-      max-width:none;
-      position:absolute;
-      right:-260px;
-      top:50%;
-      transform:translateY(-50%);
-      filter: drop-shadow(0 26px 60px rgba(5, 0, 40, 0.85));
-      transition: transform 0.25s ease-out;
-    }
-
-    .hero-image:hover img {
-      transform: translateY(-52%) scale(1.01);
+    .hero-image-placeholder strong {
+      display: block;
+      margin-top: 6px;
+      font-size: 16px;
     }
 
     /* SECTION SERVIZI (APP ZAPPY) */
@@ -457,25 +389,12 @@
       background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.12), transparent 55%),
                   linear-gradient(135deg, #311a63, #5a30c4);
       border-radius: 26px;
-      padding: 14px 20px 18px;
+      padding: 22px 22px 20px;
       box-shadow: var(--shadow-card);
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 14px;
       color: #f5f3ff;
-      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(10, 5, 40, 0.55);
-      background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.25), transparent 55%),
-                  linear-gradient(135deg, #3d2082, #6c3ef0);
-    }
-
-    .service-card:hover .service-logo {
-      transform: translateY(-10px);
-      filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.6));
     }
 
     .service-title {
@@ -514,170 +433,9 @@
       font-weight: 500;
     }
 
-    /* CTA BOTTOM (sfondo bianco, sopra Contattaci) */
-
-    .cta-bottom-section {
-      background:#ffffff;
-      padding:40px 0 32px;
-      text-align:center;
-    }
-
-    .cta-bottom-actions{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:16px;
-      flex-wrap:wrap;
-    }
-
-    .cta-bottom-btn {
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:14px 32px;
-      border-radius:999px;
-      font-weight:600;
-      font-size:15px;
-      border:none;
-      cursor:pointer;
-      background:linear-gradient(135deg, var(--accent), #ff8a6b);
-      color:#ffffff;
-      box-shadow:0 16px 38px rgba(15, 6, 50, 0.4);
-      text-decoration:none;
-      transition:transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
-      text-align:center;
-    }
-
-    .cta-bottom-btn-violet {
-      background:linear-gradient(135deg, var(--purple-mid), var(--purple-soft));
-    }
-
-    .cta-bottom-btn:hover {
-      transform:translateY(-2px) scale(1.01);
-      box-shadow:0 22px 50px rgba(15, 6, 50, 0.6);
-      filter:brightness(1.03);
-    }
-
-    /* FAQ SECTION */
-
-    .faq-section {
-      background:#ffffff;
-      padding:8px 0 64px;
-    }
-
-    .faq-title {
-      font-size:26px;
-      letter-spacing:-0.03em;
-      margin-bottom:18px;
-      text-align:center;
-      color:var(--text-main);
-    }
-
-    .faq-intro {
-      font-size:14px;
-      text-align:center;
-      color:var(--text-muted);
-      max-width:520px;
-      margin:0 auto 28px;
-    }
-
-    .faq-list {
-      max-width:780px;
-      margin:0 auto;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-
-    .faq-item {
-      background:#ffffff;
-      border-radius:18px;
-      box-shadow:0 10px 26px rgba(15, 10, 60, 0.08);
-      border:1px solid rgba(19, 9, 60, 0.06);
-      overflow:hidden;
-      transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
-    }
-
-    .faq-item.active {
-      transform: translateY(-2px);
-      box-shadow:0 16px 40px rgba(15, 10, 60, 0.13);
-      border-color: rgba(107, 76, 246, 0.45);
-    }
-
-    .faq-item-header {
-      width:100%;
-      padding:14px 18px;
-      border:none;
-      background:transparent;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      cursor:pointer;
-      font-size:14px;
-      font-weight:600;
-      color:var(--text-main);
-    }
-
-    .faq-question-text {
-      text-align:left;
-      padding-right:10px;
-    }
-
-    .faq-arrow {
-      font-size:16px;
-      transition:transform 0.18s ease;
-      flex-shrink:0;
-      color:var(--purple-mid);
-    }
-
-    .faq-body {
-      max-height:0;
-      overflow:hidden;
-      transition:max-height 0.22s ease, padding-top 0.22s ease;
-      padding:0 18px;
-    }
-
-    .faq-body-inner {
-      padding:0 0 14px 0;
-      font-size:14px;
-      color:var(--text-muted);
-      text-align:left;
-    }
-
-    .faq-item.active .faq-body {
-      max-height:220px;
-      padding-top:4px;
-    }
-
-    .faq-item.active .faq-arrow {
-      transform:rotate(180deg);
-    }
-
-    @media (max-width: 600px) {
-      .faq-title {
-        font-size:22px;
-      }
-
-      .faq-body-inner {
-        font-size:13px;
-      }
-    }
-
-    /* REVEAL ON SCROLL */
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.45s ease-out, transform 0.45s ease-out;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
     /* RESPONSIVE */
 
+    
     @media (max-width: 960px) {
       nav {
         display: none;
@@ -692,12 +450,9 @@
         justify-content: center;
       }
 
-      .hero-image {
+      .hero-image-placeholder {
+        width: 280px;
         height: 360px;
-      }
-
-      .hero-image img {
-        right:-120px;
       }
 
       /* Slider orizzontale per le app su mobile */
@@ -721,7 +476,7 @@
       }
     }
 
-    @media (max-width: 520px) {
+@media (max-width: 520px) {
       .hero h1 {
         font-size: 34px;
       }
@@ -730,7 +485,7 @@
         font-size: 24px;
       }
     }
-
+  
     /* CONTACT SECTION */
 
     .contact-section {
@@ -797,18 +552,12 @@
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
       z-index: 999;
       text-decoration: none;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .whatsapp-floating img {
       width: 28px;
       height: 28px;
       display: block;
-    }
-
-    .whatsapp-floating:hover {
-      transform: translateY(-2px) scale(1.03);
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
     }
 
     @media (max-width: 600px) {
@@ -883,13 +632,25 @@
           </div>
         </div>
 
-        <div class="hero-right">
-          <div class="hero-image">
-            <img src="phone-hand-large.webp"
-                 alt="Zappy App" />
+        
+<div class="hero-right">
+  <div class="hero-image" style="position:relative; height:420px; overflow:visible;">
+    <img src="phone-hand-large.webp"
+         alt="Zappy App"
+         style="
+            height:120%;
+            width:auto;
+            max-width:none;
+            position:absolute;
+            right:-260px;
+            top:50%;
+            transform:translateY(-50%);
+         " />
+  </div>
+</div>
+
           </div>
         </div>
-
       </section>
     </div>
   </div>
@@ -897,7 +658,7 @@
   <!-- SEZIONE SERVIZI / APP ZAPPY -->
   <section id="cosa-offriamo" class="services-section">
     <div class="container">
-      <div class="services-header reveal">
+      <div class="services-header">
         <div class="services-pill">Servizi</div>
         <h2 class="services-title">Le App Zappy per il tuo locale</h2>
         <p class="services-sub">
@@ -906,9 +667,10 @@
         </p>
       </div>
 
+      
       <div class="services-grid">
         <!-- Card 1 -->
-        <div class="service-card reveal">
+        <div class="service-card">
           <img src="logo-zappy-match-transparent.png" class="service-logo">
           <p class="service-text">
             Con Zappy Match i clienti possono chattare tra tavoli, scoprire nuove persone
@@ -917,8 +679,8 @@
         </div>
 
         <!-- Card 2 -->
-        <div class="service-card reveal">
-          <img src="logo-zappy-land-transparent.png" class="service-logo">
+        <div class="service-card">
+          <img src="logo-zappy-land.webp" class="service-logo">
           <p class="service-text">
             Zappy Land intrattiene bambini e ragazzi con giochi, disegni
             e animazioni divertenti per tutte le età.
@@ -926,8 +688,8 @@
         </div>
 
         <!-- Card 3 -->
-        <div class="service-card reveal">
-          <img src="logo-zappy-photo-transparent.png" class="service-logo">
+        <div class="service-card">
+          <img src="logo-zappy-photo.webp" class="service-logo">
           <p class="service-text">
             Zappy Photo crea una gallery condivisa delle foto dei clienti:
             perfetta anche per promo social.
@@ -935,16 +697,16 @@
         </div>
 
         <!-- Card 4 -->
-        <div class="service-card reveal">
-          <img src="logo-zappy-room-transparent.png" class="service-logo">
+        <div class="service-card">
+          <img src="logo-zappy-room.webp" class="service-logo">
           <p class="service-text">
             Zappy Room è l’app per sfidarsi a quiz a tempo, in solo o in gruppo.
           </p>
         </div>
 
         <!-- Card 5 -->
-        <div class="service-card reveal">
-          <img src="logo-zappy-lucky-transparent.png" class="service-logo">
+        <div class="service-card">
+          <img src="logo-zappy-lucky.webp" class="service-logo">
           <p class="service-text">
             Zappy Lucky attiva una ruota della fortuna ad ogni pagamento
             con coupon premio.
@@ -958,7 +720,7 @@
   <section class="apps-copy-section" id="perche-zappy">
     <div class="page">
       <div class="apps-copy">
-        <div class="apps-copy-block reveal">
+        <div class="apps-copy-block">
           <h3 class="apps-copy-title">Le app che cambiano le regole del gioco.</h3>
           <p class="apps-copy-text">
             Non parliamo di funzioni qualsiasi: sono esperienze uniche, progettate
@@ -971,7 +733,7 @@
           </p>
         </div>
 
-        <div class="apps-copy-block reveal">
+        <div class="apps-copy-block">
           <h3 class="apps-copy-title">Un’esclusiva che solo Zappy offre.</h3>
           <p class="apps-copy-text">
             Nessun altro in Italia ha un ecosistema integrato così potente.
@@ -980,7 +742,7 @@
           </p>
         </div>
 
-        <div class="apps-copy-block reveal">
+        <div class="apps-copy-block">
           <h3 class="apps-copy-title">Il controllo è tuo.</h3>
           <p class="apps-copy-text">
             Puoi attivarne una, due, tre… o tutte. Zappy si adatta al tuo stile
@@ -993,106 +755,9 @@
   </section>
 
   <section id="prezzi"></section>
-
-  <!-- NUOVI PULSANTI SU SFONDO BIANCO -->
-  <section class="cta-bottom-section">
-    <div class="container reveal">
-      <div class="cta-bottom-actions">
-        <a href="perche-zappy.html" class="cta-bottom-btn">
-          Perché Zappy e prezzi
-        </a>
-        <a href="https://wa.me/393791243514" target="_blank" rel="noopener noreferrer" class="cta-bottom-btn cta-bottom-btn-violet">
-          Per saperne di più clicca qui e scrivici
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="faq-section" id="faq">
-    <div class="container">
-      <h2 class="faq-title reveal">Domande frequenti su Zappy</h2>
-      <p class="faq-intro reveal">
-        Alcune delle domande che ci fanno più spesso i titolari di bar e locali prima di attivare Zappy.
-      </p>
-
-      <div class="faq-list">
-        <div class="faq-item reveal">
-          <button class="faq-item-header" type="button">
-            <span class="faq-question-text">Serve scaricare un’app per usare Zappy?</span>
-            <span class="faq-arrow">▾</span>
-          </button>
-          <div class="faq-body">
-            <div class="faq-body-inner">
-              No. Zappy funziona interamente dal browser: il cliente inquadra il QR code del tavolo,
-              si apre subito il menù digitale e può ordinare e pagare senza dover installare nulla
-              sul proprio telefono.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item reveal">
-          <button class="faq-item-header" type="button">
-            <span class="faq-question-text">Cosa include lo Starter Kit Zappy?</span>
-            <span class="faq-arrow">▾</span>
-          </button>
-          <div class="faq-body">
-            <div class="faq-body-inner">
-              Lo Starter Kit include: configurazione del menù digitale del tuo locale, QR code unici per ogni tavolo,
-              stampante comande collegata al sistema e supporto per l’avvio. In pratica, ricevi tutto pronto per iniziare
-              ad usare Zappy dal primo giorno.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item reveal">
-          <button class="faq-item-header" type="button">
-            <span class="faq-question-text">Come funzionano ordini e pagamenti dal tavolo?</span>
-            <span class="faq-arrow">▾</span>
-          </button>
-          <div class="faq-body">
-            <div class="faq-body-inner">
-              Il cliente scansiona il QR del tavolo, sceglie prodotti e varianti dal menù, conferma l’ordine e può
-              pagare direttamente online. L’ordine arriva in tempo reale al bar o in cucina tramite stampante o tablet,
-              così il personale deve solo preparare e servire.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item reveal">
-          <button class="faq-item-header" type="button">
-            <span class="faq-question-text">Quanto costa Zappy al mese?</span>
-            <span class="faq-arrow">▾</span>
-          </button>
-          <div class="faq-body">
-            <div class="faq-body-inner">
-              Zappy prevede uno Starter Kit iniziale per l’hardware e la configurazione, più un canone
-              mensile a partire da 69,90 €/mese per l’utilizzo della piattaforma, aggiornamenti e assistenza.
-              I prezzi esatti vengono definiti in base alle esigenze del locale.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item reveal">
-          <button class="faq-item-header" type="button">
-            <span class="faq-question-text">Con quali dispositivi funziona Zappy nel locale?</span>
-            <span class="faq-arrow">▾</span>
-          </button>
-          <div class="faq-body">
-            <div class="faq-body-inner">
-              I clienti possono usare qualsiasi smartphone con connessione internet. Il personale può
-              gestire gli ordini da tablet, PC o dalla stampante comande collegata al sistema.
-              Non è necessario cambiare il tuo registratore di cassa: Zappy lavora a fianco di ciò che utilizzi già.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="contact-section" id="contatti">
     <div class="page">
-      <div class="contact-inner reveal">
+      <div class="contact-inner">
         <h2 class="contact-title">Contattaci</h2>
         <p class="contact-text">
           Vuoi portare Zappy nel tuo locale? Scrivici su WhatsApp.
@@ -1108,49 +773,5 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
   </a>
 
-  <script>
-    // FAQ accordion: una sola aperta alla volta
-    document.addEventListener("DOMContentLoaded", function () {
-      const items = document.querySelectorAll(".faq-item");
-
-      items.forEach((item) => {
-        const header = item.querySelector(".faq-item-header");
-        header.addEventListener("click", () => {
-          const isActive = item.classList.contains("active");
-
-          // chiudi tutte
-          items.forEach((other) => other.classList.remove("active"));
-
-          // se quella cliccata non era attiva, aprila
-          if (!isActive) {
-            item.classList.add("active");
-          }
-        });
-      });
-
-      // Reveal on scroll
-      const reveals = document.querySelectorAll(".reveal");
-      if ("IntersectionObserver" in window) {
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          {
-            threshold: 0.12,
-          }
-        );
-
-        reveals.forEach((el) => observer.observe(el));
-      } else {
-        // fallback: mostra tutto
-        reveals.forEach((el) => el.classList.add("visible"));
-      }
-    });
-  </script>
 </body>
 </html>
