@@ -314,7 +314,7 @@
       color: rgba(255, 255, 255, 0.9);
     }
 
-    /* HERO IMAGE PLACEHOLDER */
+    /* HERO IMAGE */
 
     .hero-right {
       display: flex;
@@ -323,7 +323,7 @@
 
     .hero-image {
       position: relative;
-      height: 420px;
+      height: 560px; /* più alta per ospitare l'immagine ingrandita */
       overflow: visible;
       animation: floatPhone 5.5s ease-in-out 0.4s infinite alternate;
     }
@@ -338,13 +338,13 @@
     }
 
     .hero-image img {
-      height:120%;
-      width:auto;
-      max-width:none;
-      position:absolute;
-      right:-260px;
-      top:50%;
-      transform:translateY(-50%);
+      height: 200%;           /* leggermente più grande per un effetto più importante in hero */
+      width: auto;
+      max-width: none;
+      position: absolute;
+      right: -260px;
+      top: 50%;
+      transform: translateY(-50%);
       filter: drop-shadow(0 26px 60px rgba(5, 0, 40, 0.85));
       transition: transform 0.25s ease-out;
     }
@@ -885,8 +885,7 @@
 
         <div class="hero-right">
           <div class="hero-image">
-            <img src="phone-hand-large.webp"
-                 alt="Zappy App" />
+            <img src="phone-hand.webp" alt="Zappy App" />
           </div>
         </div>
 
