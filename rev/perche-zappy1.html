@@ -573,7 +573,465 @@
       }
     }
 
-  </style>
+  
+    /* SEZIONI PERCHÉ ZAPPY - STILE VISION / MISSION / VALORI */
+    .why-intro-section {
+      background: #ffffff;
+      padding: 80px 0 40px;
+    }
+
+    .why-intro {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .badge-light {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: #f2ebff;
+      color: var(--purple-mid);
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .why-intro-title {
+      font-size: 32px;
+      line-height: 1.2;
+      margin-bottom: 14px;
+      color: var(--purple-dark);
+    }
+
+    .why-intro-text {
+      font-size: 16px;
+      color: var(--text-muted);
+    }
+
+    .section-light {
+      background: #faf7ff;
+    }
+
+    .why-split-section {
+      padding: 72px 0;
+    }
+
+    .why-split {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 56px;
+      align-items: center;
+    }
+
+    .why-split-reverse {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    }
+
+    .why-split-text h2 {
+      font-size: 28px;
+      margin-bottom: 16px;
+      color: var(--purple-dark);
+    }
+
+    .why-split-text p {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .badge-soft {
+      display: inline-flex;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(107, 76, 246, 0.08);
+      color: var(--purple-mid);
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 14px;
+    }
+
+    .why-split-media {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mockup-card {
+      width: 320px;
+      border-radius: 28px;
+      background: linear-gradient(145deg, #f8f3ff, #ffffff);
+      box-shadow: 0 28px 60px rgba(16, 12, 60, 0.18);
+      overflow: hidden;
+      padding-bottom: 20px;
+    }
+
+    .mockup-header {
+      height: 70px;
+      background: radial-gradient(circle at 0 0, #ffffff, #c99dff);
+    }
+
+    .mockup-body {
+      padding: 20px 22px 0;
+    }
+
+    .mockup-balance {
+      width: 70%;
+      height: 22px;
+      border-radius: 999px;
+      background: linear-gradient(120deg, #6b4cf6, #b845ff);
+      margin-bottom: 16px;
+    }
+
+    .mockup-lines {
+      height: 10px;
+      border-radius: 999px;
+      background: #ece6ff;
+      margin-bottom: 8px;
+    }
+
+    .mockup-lines.short {
+      width: 55%;
+    }
+
+    .shield-card {
+      width: 340px;
+      border-radius: 32px;
+      background: #f6f2ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 40px 20px;
+      box-shadow: 0 26px 60px rgba(19, 10, 70, 0.16);
+    }
+
+    .shield-icon {
+      width: 140px;
+      height: 160px;
+      border-radius: 50% 50% 46% 46%;
+      background: linear-gradient(145deg, #6b4cf6, #b845ff);
+      position: relative;
+    }
+
+    .shield-icon::after {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border-radius: inherit;
+      background: radial-gradient(circle at 30% 0, #ffffff, #7e5dff);
+    }
+
+    .shield-gear {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 6px solid rgba(107, 76, 246, 0.16);
+    }
+
+    .shield-gear.gear-1 {
+      top: 22%;
+      right: 12%;
+    }
+
+    .shield-gear.gear-2 {
+      bottom: 18%;
+      left: 10%;
+    }
+
+    .why-metrics-section {
+      padding: 64px 0 40px;
+      background: linear-gradient(135deg, #5b3df6, #8b46ff);
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 32px;
+      text-align: center;
+    }
+
+    .metric-item {
+      padding: 18px 12px;
+    }
+
+    .metric-value {
+      font-size: 28px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .metric-label {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .why-values-section {
+      padding: 52px 0 80px;
+      background: #ffffff;
+    }
+
+    .why-values-header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .why-values-header h2 {
+      font-size: 28px;
+      color: var(--purple-dark);
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .value-card {
+      background: #f8f5ff;
+      border-radius: 22px;
+      padding: 22px 22px 20px;
+      box-shadow: 0 18px 40px rgba(27, 16, 80, 0.08);
+    }
+
+    .value-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(107, 76, 246, 0.12);
+      margin-bottom: 14px;
+    }
+
+    .value-card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: var(--purple-dark);
+    }
+
+    .value-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 900px) {
+      .why-split {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 32px;
+      }
+
+      .why-split-reverse {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .why-split-media {
+        order: -1;
+      }
+
+      .metrics-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 24px;
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .why-intro-section {
+        padding: 64px 0 30px;
+      }
+
+      .why-intro-title {
+        font-size: 26px;
+      }
+
+      .why-split-section {
+        padding: 52px 0;
+      }
+
+      .metrics-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .values-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .mockup-card,
+      .shield-card {
+        width: 100%;
+        max-width: 320px;
+      }
+    }
+
+    
+    /* SEZIONI EXTRA - PERSONALIZZAZIONE / BENEFIT / A CHI È RIVOLTO */
+    .why-extra-section {
+      padding: 64px 0 40px;
+      background: #ffffff;
+    }
+
+    .why-extra-block {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      color: var(--purple-dark);
+    }
+
+    .why-extra-title {
+      font-size: 30px;
+      margin-bottom: 16px;
+      background: linear-gradient(90deg, #6b4cf6, #b845ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .why-extra-text {
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .why-checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: inline-flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 15px;
+      color: var(--purple-dark);
+    }
+
+    .why-checklist li {
+      color: var(--purple-dark);
+    }
+
+    .why-benefits-section {
+      padding: 72px 0;
+      background: #ffffff;
+    }
+
+    .why-benefits-title {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 30px;
+      background: linear-gradient(90deg, #6b4cf6, #b845ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .benefit-card {
+      background: linear-gradient(135deg, #5b3df6, #8b46ff);
+      border-radius: 22px;
+      padding: 22px 20px 20px;
+      color: #ffffff;
+      box-shadow: 0 16px 40px rgba(35, 18, 110, 0.35);
+      border: none;
+      min-height: 190px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .benefit-card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .benefit-card p {
+      font-size: 14px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .why-audience-section {
+      padding: 56px 0 72px;
+      background: #ffffff;
+      text-align: center;
+    }
+
+    .why-audience-title {
+      font-size: 28px;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #6b4cf6, #b845ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .why-audience-text {
+      max-width: 620px;
+      margin: 0 auto 24px;
+      font-size: 15px;
+      color: var(--text-muted);
+    }
+
+    .audience-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .chip {
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--purple-dark);
+      font-size: 14px;
+      border: 1px solid rgba(107, 76, 246, 0.18);
+      box-shadow: 0 10px 25px rgba(19, 5, 70, 0.06);
+      white-space: nowrap;
+    }
+
+    @media (max-width: 900px) {
+      .benefits-grid {
+        display: flex;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        gap: 16px;
+        scroll-snap-type: x mandatory;
+      }
+
+      .benefit-card {
+        flex: 0 0 80%;
+        scroll-snap-align: center;
+      }
+    }
+
+@media (max-width: 900px) {
+      .benefits-grid {
+        display: flex;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        gap: 16px;
+        scroll-snap-type: x mandatory;
+      }
+
+      .benefit-card {
+        flex: 0 0 80%;
+        scroll-snap-align: center;
+      }
+    }
+</style>
 </head>
 <body>
   <!-- HERO -->
@@ -636,43 +1094,227 @@
     </div>
   </div>
 
-  <section class="apps-copy-section" id="perche-zappy">
+  
+  <!-- SEZIONE PERCHÉ ZAPPY - STILE VISION / MISSION / VALORI -->
+  <section class="why-intro-section">
     <div class="page">
-      <div class="apps-copy">
-        <div class="apps-copy-block">
-          <h3 class="apps-copy-title">Le app che cambiano le regole del gioco.</h3>
-          <p class="apps-copy-text">
-            Non parliamo di funzioni qualsiasi: sono esperienze uniche, progettate
-            per rendere il tuo locale indimenticabile.
-          </p>
-          <p class="apps-copy-text">
-            Con Zappy i clienti non vengono solo a bere o mangiare: rimangono,
-            socializzano, giocano, condividono e parlano del tuo locale anche
-            il giorno dopo.
+      <div class="why-intro">
+        <span class="badge-light">Perché Zappy</span>
+        <h2 class="why-intro-title">Dare più valore a ogni serata nel tuo locale.</h2>
+        <p class="why-intro-text">
+          Zappy non è soltanto un menù QR, ma un ecosistema che trasforma ordini e pagamenti
+          in un&apos;esperienza moderna, fluida e coinvolgente per i tuoi clienti.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-split-section section-light">
+    <div class="page why-split">
+      <div class="why-split-media">
+        <div class="mockup-card">
+          <div class="mockup-header"></div>
+          <div class="mockup-body">
+            <div class="mockup-balance"></div>
+            <div class="mockup-lines"></div>
+            <div class="mockup-lines short"></div>
+            <div class="mockup-lines"></div>
+          </div>
+        </div>
+      </div>
+      <div class="why-split-text">
+        <span class="badge-soft">Visione</span>
+        <h2>La nostra visione è un locale più vivo, con meno caos al bancone.</h2>
+        <p>
+          Con Zappy dai ordine alle comande, riduci gli errori e lasci che il personale si concentri
+          sull&apos;esperienza del cliente, non sulla gestione di scontrini e bigliettini di carta.
+        </p>
+        <p>
+          Ogni funzionalità è pensata per rendere semplice il lavoro dello staff e allo stesso tempo
+          far percepire il tuo locale come moderno, curato e professionale.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-split-section">
+    <div class="page why-split why-split-reverse">
+      <div class="why-split-text">
+        <span class="badge-soft">Missione</span>
+        <h2>La nostra missione è semplificare ordini e pagamenti, senza cambiare il tuo stile.</h2>
+        <p>
+          Ti diamo strumenti digitali potenti ma facili da usare: il cliente scansiona il QR, ordina,
+          paga dal tavolo e l&apos;ordine arriva in automatico al bar o in cucina.
+        </p>
+        <p>
+          Nessuna app da scaricare, nessun gestionale complicato: solo un flusso chiaro che si integra
+          con il modo in cui lavori già oggi.
+        </p>
+      </div>
+      <div class="why-split-media">
+        <div class="shield-card">
+          <div class="shield-icon"></div>
+          <div class="shield-gear gear-1"></div>
+          <div class="shield-gear gear-2"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-metrics-section">
+    <div class="page metrics-grid">
+      <div class="metric-item">
+        <div class="metric-value">+25%</div>
+        <div class="metric-label">Tempo medio di permanenza</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-value">+18%</div>
+        <div class="metric-label">Scontrino medio</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-value">-40%</div>
+        <div class="metric-label">Errori nelle comande</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-value">+1</div>
+        <div class="metric-label">Esperienza unica per il tuo locale</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-values-section">
+    <div class="page">
+      <div class="why-values-header">
+        <span class="badge-soft">I nostri punti di forza</span>
+        <h2>La base su cui abbiamo costruito Zappy.</h2>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon"></div>
+          <h3>Esperienza del cliente</h3>
+          <p>
+            Ogni dettaglio è pensato per far sentire i tuoi clienti seguiti, coinvolti e
+            invogliati a tornare.
           </p>
         </div>
 
-        <div class="apps-copy-block">
-          <h3 class="apps-copy-title">Un’esclusiva che solo Zappy offre.</h3>
-          <p class="apps-copy-text">
-            Nessun altro in Italia ha un ecosistema integrato così potente.
-            Ogni app è un magnete che aumenta il tempo di permanenza,
-            lo scontrino medio e il passaparola spontaneo.
+        <div class="value-card">
+          <div class="value-icon"></div>
+          <h3>Velocità al servizio</h3>
+          <p>
+            Meno attese al bancone, più ordini serviti. Le comande arrivano chiare e leggibili,
+            già organizzate per il tuo staff.
           </p>
         </div>
 
-        <div class="apps-copy-block">
-          <h3 class="apps-copy-title">Il controllo è tuo.</h3>
-          <p class="apps-copy-text">
-            Puoi attivarne una, due, tre… o tutte. Zappy si adatta al tuo stile
-            e ai tuoi clienti, trasformando ogni serata in qualcosa che non
-            possono trovare da nessun’altra parte.
+        <div class="value-card">
+          <div class="value-icon"></div>
+          <h3>Dati e controllo</h3>
+          <p>
+            Statistiche su ordini, prodotti e fasce orarie per capire cosa funziona
+            davvero nel tuo locale.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon"></div>
+          <h3>Supporto umano</h3>
+          <p>
+            Non solo software: ti seguiamo nell&apos;installazione, nella configurazione
+            e nelle prime serate con Zappy.
           </p>
         </div>
       </div>
     </div>
   </section>
-  <section class="contact-section" id="contatti">
+
+  <!-- SEZIONE PERSONALIZZAZIONE TOTALE -->
+  <section class="why-extra-section">
+    <div class="page">
+      <div class="why-extra-block">
+        <h2 class="why-extra-title">Personalizzazione totale</h2>
+        <p class="why-extra-text">
+          Ogni menù, colore, prezzo e contenuto del sito Zappy viene
+          completamente personalizzato in base alle esigenze del tuo locale.
+          Dal logo ai prodotti, tutto viene adattato con cura per rispecchiare al meglio il tuo stile.
+        </p>
+        <ul class="why-checklist">
+          <li>✅ Nomi e descrizioni dei prodotti</li>
+          <li>✅ Immagini e loghi</li>
+          <li>✅ Colori del sito</li>
+          <li>✅ Prezzi personalizzati</li>
+          <li>✅ Sezioni e pagine su richiesta</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEZIONE BENEFIT PRINCIPALI -->
+  <section class="why-benefits-section">
+    <div class="page">
+      <h2 class="why-benefits-title">Perché scegliere Zappy</h2>
+      <div class="benefits-grid">
+        <article class="benefit-card">
+          <h3>📈 Aumento dello scontrino medio</h3>
+          <p>
+            Ogni cliente può ordinare di più in autonomia, con suggerimenti intelligenti
+            e prodotti in evidenza studiati per il tuo locale.
+          </p>
+        </article>
+
+        <article class="benefit-card">
+          <h3>⚡ Riduzione dei tempi di attesa</h3>
+          <p>
+            Gli ordini arrivano direttamente in cassa o alla stampante, subito pronti,
+            senza bigliettini illeggibili o chiamate continue al bancone.
+          </p>
+        </article>
+
+        <article class="benefit-card">
+          <h3>🧑‍🍳 Più libertà per il personale</h3>
+          <p>
+            Il team è più libero di seguire i clienti, spiegare i prodotti e curare il servizio,
+            senza stress e corse inutili avanti e indietro.
+          </p>
+        </article>
+
+        <article class="benefit-card">
+          <h3>🎯 Nessun errore nelle comande</h3>
+          <p>
+            Ordini chiari e precisi, con varianti ed extra già selezionati dal cliente:
+            meno fraintendimenti, meno errori di scrittura, più serenità per tutti.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEZIONE A CHI È RIVOLTO -->
+  <section class="why-audience-section">
+    <div class="page">
+      <h2 class="why-audience-title">A chi è rivolto?</h2>
+      <p class="why-audience-text">
+        Zappy è pensato per tutti i locali che vogliono offrire un&apos;esperienza moderna
+        e veloce, senza complicarsi la vita con sistemi ingestibili.
+      </p>
+      <div class="audience-chips">
+        <span class="chip">🍹 Bar</span>
+        <span class="chip">🍺 Pub</span>
+        <span class="chip">🍕 Pizzerie</span>
+        <span class="chip">🌭 Chioschi</span>
+        <span class="chip">🏖️ Stabilimenti balneari</span>
+        <span class="chip">🚚 Street food</span>
+        <span class="chip">🎉 Eventi</span>
+        <span class="chip">🎡 Sagre</span>
+        <span class="chip">🎂 Feste private</span>
+        <span class="chip">…e molto altro</span>
+      </div>
+    </div>
+  </section>
+
+
+<section class="contact-section" id="contatti">
     <div class="page">
       <div class="contact-inner">
         <h2 class="contact-title">Contattaci</h2>
