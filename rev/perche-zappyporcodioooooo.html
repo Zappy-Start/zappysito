@@ -188,15 +188,6 @@
       align-items: center;
       gap: 14px;
       margin-bottom: 22px;
-      /*
-       * Ensure the action buttons sit above any overlapping content. Without
-       * a positioning context and z-index the subsequent decorative image can
-       * overlap these buttons, preventing clicks. Setting position: relative
-       * and a z-index places the container above the image while preserving
-       * document flow.
-       */
-      position: relative;
-      z-index: 5;
     }
 
     .btn-primary {
@@ -211,15 +202,7 @@
       box-shadow: 0 18px 40px rgba(6, 0, 30, 0.65);
     }
 
-    /*
-     * Apply the secondary button styling to both <button> and <a> elements so
-     * anchors using the .btn-secondary class inherit the same appearance as
-     * their button counterpart. Without explicitly targeting <a> elements here
-     * they will not receive these styles and may behave unexpectedly when used
-     * as a call‑to‑action in the hero section.
-     */
-    button.btn-secondary,
-    a.btn-secondary {
+    .btn-secondary {
       padding: 10px 18px;
       border-radius: 999px;
       border: 1px solid rgba(255, 255, 255, 0.5);
@@ -228,10 +211,6 @@
       font-weight: 500;
       font-size: 14px;
       cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
     }
 
     .hero-note {
@@ -1323,13 +1302,7 @@
 
       <div class="hero-actions">
         <button class="btn-primary" onclick="openDemo()">Guarda la demo</button>
-        <!--
-          Utilizziamo nuovamente un elemento <button> per mantenere la struttura originale
-          del file. È sufficiente aggiornare la destinazione tramite l'evento onclick.
-          Il valore z-index aggiunto al contenitore hero-actions garantisce che il
-          bottone rimanga cliccabile e sopra l'immagine decorativa.
-        -->
-        <button class="btn-secondary" onclick="window.location.href='./come-funziona-cliente.html'">Come funziona e prezzi</button>
+        <button class="btn-secondary" onclick="window.location.href=\'come-funziona-cliente.html\'">Come funziona e prezzi</button>
       </div>
 
       <p class="hero-note">
