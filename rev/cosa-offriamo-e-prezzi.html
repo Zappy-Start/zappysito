@@ -568,9 +568,15 @@
     .pricing-grid {
       margin-top: 10px;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 22px;
       align-items: stretch;
+    }
+
+    @media (max-width: 1100px) {
+      .pricing-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
     .pricing-card {
@@ -583,37 +589,28 @@
       flex-direction: column;
       justify-content: space-between;
     }
-    .pricing-card:hover {
-      background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.18), transparent 60%),
-                  linear-gradient(145deg, #4b2bb8, #7a4df7);
-      color: #ffffff;
+    
+    /* Hover: mantieni bianche le card non in evidenza */
+    .pricing-card:not(.pricing-card-featured):hover {
       transform: translateY(-4px);
-      transition: all 0.18s ease-out;
+      box-shadow: 0 26px 70px rgba(21, 8, 66, 0.16);
+      transition: transform 0.18s ease-out, box-shadow 0.18s ease-out;
     }
 
-    .pricing-card:hover .pricing-label,
-    .pricing-card:hover .pricing-name,
-    .pricing-card:hover .pricing-amount,
-    .pricing-card:hover .pricing-amount-small,
-    .pricing-card:hover .pricing-once,
-    .pricing-card:hover .pricing-features li {
-      color: #ffffff;
+    /* Hover: la card centrale resta colorata (solo un piccolo lift) */
+    .pricing-card-featured:hover {
+      transform: scale(1.08) translateY(-4px);
+      transition: transform 0.18s ease-out;
     }
-
-    .pricing-card:hover .pricing-features li::before {
-      color: #ffffff;
-    }
-
-    .pricing-card:hover .pricing-cta {
-      background: #ffffff;
-      color: #4b2bb8;
-    }
-
-
-    .pricing-card-featured {
+.pricing-card-featured {
       background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.18), transparent 60%),
                   linear-gradient(145deg, #4b2bb8, #7a4df7);
       color: #ffffff;
+
+      position: relative;
+      z-index: 5;
+      transform: scale(1.08);
+      box-shadow: 0 30px 80px rgba(40, 15, 120, 0.45);
     }
 
     .pricing-card-featured .pricing-label,
@@ -1081,7 +1078,7 @@
           </p>
           <div class="hero-actions">
             <button class="btn-primary">Guarda la demo</button>
-            <button class="btn-secondary">Scarica brochure</button>
+            <a href="https://wa.me/393791243514" target="_blank" class="btn-secondary">Contattaci su WhatsApp</a>
           </div>
           <p class="hero-note">
             Nessuna app da installare · QR unici per tavolo · Stampante comande inclusa nello Starter Kit
@@ -1176,14 +1173,19 @@
     <div class="page why-split why-split-reverse">
       <div class="why-split-text">
         <span class="badge-soft">Tablet gestione sala</span>
-        <h2>Dashboard ordini su tablet.</h2>
+        <h2>Tablet gestionale Zappy con Admin integrato.</h2>
         <p>
-          Un'interfaccia pensata per il personale per vedere i tavoli attivi,
-          gli ordini in corso e lo stato di preparazione in tempo reale.
+          Un <strong>tablet professionale già incluso e configurato</strong>, con all’interno l’intero ecosistema Zappy pronto all’uso
+          per la gestione completa del locale.
         </p>
         <p>
-          Dal tablet puoi aprire, chiudere e controllare i tavoli, vedere lo storico
-          delle comande e tenere sempre sotto controllo il flusso degli ordini.
+          Dal tablet puoi gestire tavoli, ordini e stato delle comande in tempo reale, aprire e chiudere i tavoli, vedere lo storico
+          e modificare prodotti, prezzi, categorie e immagini. In più puoi consultare statistiche e andamento delle vendite e
+          personalizzare colori, impostazioni e interfaccia in base al tuo locale.
+        </p>
+        <p>
+          Inoltre, tramite il <strong>pannello dedicato</strong>, puoi scegliere in autonomia quali <strong>app Zappy</strong> attivare o disattivare,
+          integrandole nel tuo locale in pochi clic in base alle tue esigenze.
         </p>
       </div>
       <div class="why-split-media">
@@ -1225,70 +1227,92 @@
         <span class="badge-light">Cosa offriamo e prezzi</span>
         <h2 class="pricing-title">Scegli il tuo Starter Pack Zappy.</h2>
         <p class="pricing-subtitle">
-          Due pacchetti pensati per locali diversi: puoi partire subito con tutti i dispositivi
-          oppure iniziare senza POS e aggiungerlo in seguito.
+          Tre pacchetti per partire come preferisci: solo menù digitale, kit completo con POS (il più scelto),
+          oppure premium senza commissioni.
         </p>
       </div>
 
-      <div class="pricing-toggle">
-        <button class="toggle-btn toggle-btn-active" data-mode="monthly">Mensile</button>
-        <button class="toggle-btn" data-mode="yearly">Annuale (-10%)</button>
-      </div>
-
-      <div class="pricing-grid">
-        <!-- CARD 1: STARTER PACK PRO POS -->
-        <div class="pricing-card" data-pack="pos">
-          <div class="pricing-label">Starter Pack POS</div>
-          <h3 class="pricing-name">Kit completo con POS</h3>
+<div class="pricing-grid">
+        <!-- CARD 1: SOLO MENÙ DIGITALE -->
+        <div class="pricing-card" data-pack="digital">
+          <div class="pricing-label pricing-label-soft">Pacchetto Digitale</div>
+          <h3 class="pricing-name">Solo Menù Digitale</h3>
           <div class="pricing-price-row">
             <div>
-              <div class="pricing-amount">699€</div>
+              <div class="pricing-amount">197€</div>
               <div class="pricing-once">una tantum</div>
             </div>
             <div>
-              <div class="pricing-amount-small price-card" data-mensile="69"><div class="prezzo-box">69€/mese</div></div>
+              <div class="pricing-amount-small">44€/mese</div>
+              <div class="pricing-once">piattaforma + assistenza</div>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li>Sito menù personalizzato per il tuo locale</li>
+            <li>Web app gestionale per modificare prodotti, prezzi e immagini</li>
+            <li>Aggiornamenti illimitati del menù</li>
+            <li>Solo visualizzazione: nessun pagamento online</li>
+            <li>Nessun hardware incluso</li>
+                      <li>App per i clienti (Match, Land, Photo, Room, Lucky)</li>
+          </ul>
+          <button class="pricing-cta secondary">Richiedi questo pack</button>
+        </div>
+
+        <!-- CARD 2: KIT COMPLETO CON POS (PIÙ ACQUISTATO) -->
+        <div class="pricing-card pricing-card-featured" data-pack="pos">
+          <div class="pricing-label">🔥 Più acquistato</div>
+          <h3 class="pricing-name">Kit completo con POS</h3>
+          <div class="pricing-price-row">
+            <div>
+              <div class="pricing-amount">799€</div>
+              <div class="pricing-once">una tantum</div>
+            </div>
+            <div>
+              <div class="pricing-amount-small">87€/mese</div>
               <div class="pricing-once">piattaforma + assistenza</div>
             </div>
           </div>
           <ul class="pricing-features">
             <li>POS Zappy collegato all'ecosistema</li>
+            <li>Tablet con app dedicata (gestione tavoli e ordini)</li>
             <li>Stampante comande configurata</li>
             <li>Adesivi QR “Ordina e Paga” per i tavoli</li>
-            <li>Dashboard tablet per gestione sala</li>
             <li>Menù digitale sempre aggiornabile</li>
-            <li>Commissione 1% su ogni pagamento incassato con POS</li>
+            <li>Commissione 1% su ogni pagamento incassato</li>
+                      <li>App per i clienti (Match, Land, Photo, Room, Lucky)</li>
           </ul>
           <button class="pricing-cta">Richiedi questo pack</button>
         </div>
 
-        <!-- CARD 2: STARTER PACK BASE -->
-        <div class="pricing-card" data-pack="base">
-          <div class="pricing-label pricing-label-soft">Starter Pack Base</div>
-          <h3 class="pricing-name">Kit senza POS</h3>
-          <div class="pricing-price-row single">
+        <!-- CARD 3: PREMIUM SENZA COMMISSIONI -->
+        <div class="pricing-card" data-pack="premium">
+          <div class="pricing-label pricing-label-soft">Zero commissioni</div>
+          <h3 class="pricing-name">Kit premium senza commissioni</h3>
+          <div class="pricing-price-row">
             <div>
-              <div class="pricing-amount">399€</div>
+              <div class="pricing-amount">847€</div>
               <div class="pricing-once">una tantum</div>
             </div>
             <div>
-              <div class="pricing-amount-small price-card" data-mensile="129"><div class="prezzo-box">129€/mese</div><div class="annual-box" style="display:none;"><div class="old-price"></div><div class="new-price"></div><div class="save-price"></div></div></div>
+              <div class="pricing-amount-small">267€/mese</div>
               <div class="pricing-once">piattaforma + assistenza</div>
             </div>
           </div>
           <ul class="pricing-features">
+            <li>POS Zappy collegato all'ecosistema</li>
+            <li>Tablet con app dedicata (gestione tavoli e ordini)</li>
             <li>Stampante comande configurata</li>
             <li>Adesivi QR “Ordina e Paga” per i tavoli</li>
-            <li>Dashboard tablet per gestione sala</li>
             <li>Menù digitale sempre aggiornabile</li>
-            <li>Nessuna commissione aggiuntiva sul pagamento</li>
+            <li>Nessuna commissione sui pagamenti</li>
+                      <li>App per i clienti (Match, Land, Photo, Room, Lucky)</li>
           </ul>
           <button class="pricing-cta secondary">Richiedi questo pack</button>
         </div>
       </div>
 
       <p class="pricing-note">
-        I prezzi indicati sono indicativi e possono variare in base al tipo di locale e al numero di tavoli.
-        Scrivici su WhatsApp per un preventivo su misura.
+        Prezzi fissi. Se scegli l’abbonamento annuale hai <strong>-10%</strong> sul totale del canone.
       </p>
     </div>
   </section>
@@ -1316,8 +1340,7 @@
         <span class="faq-q-text">🧩 Posso aggiungere le app Zappy in un secondo momento?</span>
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-answer"><p class="faq-a">Sì. Puoi partire dal menù QR e aggiungere in seguito Zappy Match, Land, Photo, Room o Lucky,
-            in base a come evolve il tuo locale e alle esigenze della clientela.</p></div>
+      <div class="faq-answer"><p class="faq-a">Sì. Dal tablet Zappy hai la gestione completa del sistema. Direttamente dal pannello di controllo puoi scegliere in totale autonomia quali app Zappy attivare o disattivare in base alle esigenze del tuo locale, senza interventi tecnici o configurazioni esterne. Puoi quindi decidere in qualsiasi momento quali funzionalità utilizzare, adattando la piattaforma alla crescita del locale e al tipo di esperienza che vuoi offrire ai clienti.</p></div>
     </div>
 
     <div class="faq-item">
@@ -1353,10 +1376,9 @@
   <section class="contact-section" id="contatti">
     <div class="page">
       <div class="contact-inner">
-        <h2 class="contact-title">Vuoi un preventivo su misura per il tuo locale?</h2>
+        <h2 class="contact-title">Vuoi attivare Zappy nel tuo locale?</h2>
         <p class="contact-text">
-          Scrivici su WhatsApp, raccontaci che tipo di locale gestisci e ti mandiamo una proposta completa
-          con cosa includere e quanto costa Zappy per te.
+          Scegli il pacchetto più adatto e ti guidiamo nell’attivazione. Per domande o per vedere una demo, scrivici su WhatsApp.
         </p>
         <a href="https://wa.me/393791243514" target="_blank" class="contact-btn" rel="noopener noreferrer">
           Scrivici su WhatsApp
@@ -1368,44 +1390,6 @@
   <a href="https://wa.me/393791243514" target="_blank" class="whatsapp-floating" aria-label="Scrivici su WhatsApp" rel="noopener noreferrer">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
   </a>
-
-  <script>
-    (function() {
-      const toggleButtons = document.querySelectorAll('.pricing-toggle .toggle-btn');
-      const monthlyButtons = document.querySelector('.pricing-toggle .toggle-btn[data-mode="monthly"]');
-      const yearlyButtons = document.querySelector('.pricing-toggle .toggle-btn[data-mode="yearly"]');
-      const priceElements = document.querySelectorAll('.pricing-amount-small[data-monthly]');
-
-      function setMode(mode) {
-        toggleButtons.forEach(btn => {
-          btn.classList.toggle('toggle-btn-active', btn.dataset.mode === mode);
-        });
-
-        priceElements.forEach(el => {
-          const base = parseFloat(el.dataset.monthly);
-          if (!base) return;
-          if (mode === 'yearly') {
-            const discounted = Math.round(base * 0.9);
-            el.textContent = discounted + '€ /mese';
-          } else {
-            el.textContent = base + '€ /mese';
-          }
-        });
-      }
-
-      toggleButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-          const mode = this.dataset.mode === 'yearly' ? 'yearly' : 'monthly';
-          setMode(mode);
-        });
-      });
-
-      // stato iniziale mensile
-      setMode('monthly');
-    })();
-  </script>
-
-
 <script>
 document.querySelectorAll('.faq-item').forEach(i=>{
  i.querySelector('.faq-question').addEventListener('click',()=>{
@@ -1414,44 +1398,5 @@ document.querySelectorAll('.faq-item').forEach(i=>{
  })
 })
 </script>
-
-
-<script>
-document.addEventListener("DOMContentLoaded",()=>{
-  const mensile = document.getElementById("toggle-mensile");
-  const annuale = document.getElementById("toggle-annuale");
-  const cards = document.querySelectorAll(".price-card");
-
-  function aggiorna(tipo){
-    cards.forEach(c=>{
-      const mensileVal = parseFloat(c.dataset.mensile);
-      const prezzoBox = c.querySelector(".prezzo-box");
-      const annualBox = c.querySelector(".annual-box");
-      const oldP = c.querySelector(".old-price");
-      const newP = c.querySelector(".new-price");
-      const saveP = c.querySelector(".save-price");
-
-      if(tipo==="mensile"){
-        prezzoBox.style.display="block";
-        annualBox.style.display="none";
-        prezzoBox.innerHTML = mensileVal + "€/mese";
-      } else {
-        const annual = mensileVal*12;
-        const discount = annual*0.10;
-        const finalA = annual-discount;
-        prezzoBox.style.display="none";
-        annualBox.style.display="block";
-        oldP.innerHTML = annual.toFixed(2)+"€/anno";
-        newP.innerHTML = finalA.toFixed(2)+"€/anno";
-        saveP.innerHTML = "Risparmi "+discount.toFixed(2)+"€";
-      }
-    });
-  }
-
-  if(mensile) mensile.addEventListener("click",()=>aggiorna("mensile"));
-  if(annuale) annuale.addEventListener("click",()=>aggiorna("annuale"));
-});
-</script>
-
 </body>
 </html>
