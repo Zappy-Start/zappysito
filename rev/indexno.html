@@ -1095,6 +1095,44 @@
   border-radius: 999px !important;
   font-weight: 600 !important;
 }
+
+    /* HERO split (immagine a destra con taglio obliquo) */
+    .hero-image.hero-split{
+      position: relative;
+      height: 420px;
+      border-radius: 26px;
+      background-image: url('zappy-kit-hero.webp');
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      /* taglio diagonale a sinistra */
+      clip-path: polygon(14% 0%, 100% 0%, 100% 100%, 0% 100%);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.28);
+    }
+    /* sfumatura di fusione sul taglio */
+    .hero-image.hero-split::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(90deg, rgba(58,27,120,0.85) 0%, rgba(58,27,120,0.25) 35%, rgba(58,27,120,0.0) 65%);
+      /* stessa diagonale ma un filo più "larga" per fondere meglio */
+      clip-path: polygon(0% 0%, 20% 0%, 6% 100%, 0% 100%);
+      pointer-events:none;
+    }
+    /* linea sottile sul bordo obliquo */
+    .hero-image.hero-split::after{
+      content:"";
+      position:absolute;
+      top:-10%;
+      bottom:-10%;
+      left: 10%;
+      width: 2px;
+      background: rgba(255,255,255,0.28);
+      transform: skewX(-15deg);
+      filter: blur(0.2px);
+      pointer-events:none;
+    }
+
 </style>
 </head>
 <body>
@@ -1256,19 +1294,7 @@ document.addEventListener("DOMContentLoaded", function(){
         </div>
 
         <div class="hero-right">
-          <div class="hero-image" style="position:relative; height:420px; overflow:visible;">
-            <img src="phone-hand.webp"
-                 alt="Zappy App"
-                 style="
-                    height:120%;
-                    width:auto;
-                    max-width:none;
-                    position:absolute;
-                    right:-260px;
-                    top:50%;
-                    transform:translateY(-50%);
-                 " />
-          </div>
+          <div class="hero-image hero-split"></div>
         </div>
 
       </section>
